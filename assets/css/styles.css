@@ -27,8 +27,12 @@ section aside.search-city .hr {
     border-top: 2px solid var(--black);
 }
 
-section main .display-search-results {
+section main .current-day-forecast-card {
     border: 2px solid var(--black);
+}
+
+section main .five-day-forecast{
+    background-color: var(--dark-blue);
 }
 
 #submit-button {
