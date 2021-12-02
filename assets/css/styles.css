@@ -27,6 +27,10 @@ section aside.search-city .hr {
     border-top: 2px solid var(--black);
 }
 
+section main .display-search-results {
+    border: 2px solid var(--black);
+}
+
 #submit-button {
     background-color: var(--blue);
 }

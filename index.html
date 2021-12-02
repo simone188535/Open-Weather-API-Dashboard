@@ -20,7 +20,9 @@
         <aside class="col-md-4 search-city">
           <div class="row">
             <div class="col">
-              <h2 class="my-3 secondary-header">Search for a city:</h2>
+              <h2 class="my-3 secondary-header">
+                <strong>Search for a city:</strong>
+              </h2>
               <form>
                 <input
                   type="text"
@@ -55,8 +57,35 @@
             </div>
           </div>
         </aside>
-        <main class="col-md-8 display-search-results">
-          <div class="row"></div>
+        <main class="col-md-8">
+          <div class="row display-search-results mt-3">
+            <section class="col p-2 current-day-forecast">
+              <h2 class="my-3 mb-4 secondary-header city-name-data"></h2>
+              <p class="mb-4">Temp: <span class="temp-data"></span></p>
+              <p class="mb-4">Wind: <span class="wind-data"></span></p>
+              <p class="mb-4">Humidity: <span class="humidity-data"></span></p>
+              <p class="mb-4">UV Index: <span class="uv-data"></span></p>
+            </section>
+          </div>
+          <div class="row">
+            <h2 class="my-3 secondary-header">
+              <strong>5-Day Forecast:</strong>
+            </h2>
+          </div>
+          <div class="row">
+            <section class="col m-4 five-day-forecast">
+              <div class="col-2">
+                <section class="text-light">
+                  <h2 class="my-3 mb-4 secondary-header city-name-data"></h2>
+                  <p class="mb-4">Temp: <span class="temp-data"></span></p>
+                  <p class="mb-4">Wind: <span class="wind-data"></span></p>
+                  <p class="mb-4">
+                    Humidity: <span class="humidity-data"></span>
+                  </p>
+                </section>
+              </div>
+            </section>
+          </div>
         </main>
       </section>
     </section>
