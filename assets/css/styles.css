@@ -1,0 +1,47 @@
+:root {
+    --blue: #515aff;
+    --dark-blue: #3747b5;
+    --blue-purple: #9651ff;
+    --white: #ffffff;
+    --black: #000000;
+    --light-grey: #b9bac7;
+
+}
+
+header.header-nav {
+    background: rgb(81,90,255);
+background: linear-gradient(90deg, rgba(81,90,255,1) 30%, rgba(55,71,181,1) 90%);
+    color: var(--white);
+
+}
+
+header.header-nav .header-text {
+    font-size: 1.3rem;
+}
+
+section aside.search-city .city-text-input {
+ border-color: var(--black);
+}
+
+section aside.search-city .hr {
+    border-top: 2px solid var(--black);
+}
+
+#submit-button {
+    background-color: var(--blue);
+}
+
+ul.search-history li button.search-history-btn {
+    background-color: var(--light-grey);
+}
+
+
+@media screen and (max-width: 992px) {
+
+}
+
+@media screen and (max-width: 768px) {
+    h2.secondary-header {
+        font-size: 1.3rem;
+    }
+}

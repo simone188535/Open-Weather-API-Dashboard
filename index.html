@@ -12,7 +12,55 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
   </head>
   <body>
-    HELLOOOO
+    <header class="header-nav w-100 text-center py-3">
+      <h1 class="header-text"><strong>Weather Dashboard</strong></h1>
+    </header>
+    <section class="container-fluid">
+      <section class="row">
+        <aside class="col-md-4 search-city">
+          <div class="row">
+            <div class="col">
+              <h2 class="my-3 secondary-header">Search for a city:</h2>
+              <form>
+                <input
+                  type="text"
+                  class="
+                    city-text-input
+                    w-100
+                    form-control form-control-lg
+                    mb-4
+                  "
+                />
+                <input
+                  id="submit-button"
+                  type="submit"
+                  class="w-100 btn mb-3 text-light"
+                  value="Search"
+                />
+              </form>
+
+              <hr class="mt-2 mb-3 hr" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <ul class="search-history p-0">
+                <!-- <li>
+                    <button class="w-100 btn mb-3 text-dark search-history-btn">Test</button>
+                </li>
+                <li>
+                    <button class="w-100 btn mb-3 text-dark search-history-btn">Test</button>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <main class="col-md-8 display-search-results">
+          <div class="row"></div>
+        </main>
+      </section>
+    </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
