@@ -12,8 +12,17 @@ function getCurrentDayForcastAPIData(apiURL) {
     return fetch(apiURL)
     .then(response => response.json())
     .then(data => {
-        console.log('currentDayForecast', data);
-        const currentDayForecastEl = document.getElementById('current-day-forecast');
+        const { name, main, wind } = data;
+        // console.log('currentDayForecast', data);
+        const currentDayForecastEl = document.querySelector('#current-day-forecast');
+        const CDFPrimaryHeaderEl = document.querySelector('#current-day-forecast .city-name-data');
+        const CDFTempDataEl = document.querySelector('#current-day-forecast .temp-data');
+        const CDFWindDataEl = document.querySelector('#current-day-forecast .wind-data');
+        const CDFhumidityDataEl = document.querySelector('#current-day-forecast .humidity-data');
+        const UvhumidityDataEl = document.querySelector('#current-day-forecast .uv-data');
+
+
+        // CDFPrimaryHeaderEl.textContent(`${} `);
         currentDayForecastEl.style.display = 'flex';
         
     })
