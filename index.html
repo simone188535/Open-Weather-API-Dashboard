@@ -25,13 +25,9 @@
               </h2>
               <form>
                 <input
+                  id="city-text-input"
                   type="text"
-                  class="
-                    city-text-input
-                    w-100
-                    form-control form-control-lg
-                    mb-4
-                  "
+                  class="w-100 form-control form-control-lg mb-4"
                 />
                 <input
                   id="submit-button"
@@ -57,8 +53,8 @@
             </div>
           </div>
         </aside>
-        <main class="col-md-8 display-search-results mx-3 mx-md-0">
-          <div class="row current-day-forecast-card mt-3">
+        <main id="display-search-results" class="col-md-8 mx-3 mx-md-0">
+          <div id="current-day-forecast" class="row mt-3">
             <section class="col p-2 current-day-forecast-info">
               <h2 class="my-3 mb-4 secondary-header city-name-data"></h2>
               <p class="mb-4">Temp: <span class="temp-data"></span></p>
@@ -67,13 +63,13 @@
               <p class="mb-4">UV Index: <span class="uv-data"></span></p>
             </section>
           </div>
-          <div class="row">
+          <div class="row five-day-forecast-results">
             <h2 class="my-3 secondary-header">
               <strong>5-Day Forecast:</strong>
             </h2>
           </div>
-          <div class="row justify-content-between text-light">
-                <section class="col-lg-2 mb-3 mb-lg-0 five-day-forecast">
+          <div class="row justify-content-between text-light five-day-forecast-results">
+            <section class="col-lg-2 mb-3 mb-lg-0 five-day-forecast">
                   <h2 class="my-3 mb-4 secondary-header city-name-data"></h2>
                   <p class="mb-4">Temp: <span class="temp-data"></span></p>
                   <p class="mb-4">Wind: <span class="wind-data"></span></p>

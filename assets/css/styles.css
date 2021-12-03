@@ -27,11 +27,20 @@ section aside.search-city .hr {
     border-top: 2px solid var(--black);
 }
 
-section main .current-day-forecast-card {
-    border: 2px solid var(--black);
+section main#display-search-results {
+    /* display: none; */
 }
 
-section main .five-day-forecast{
+section main #current-day-forecast {
+    border: 2px solid var(--black);
+    display: none;
+}
+
+section main .five-day-forecast-results {
+    display: none;
+}
+
+section main .five-day-forecast-results .five-day-forecast {
     background-color: var(--dark-blue);
 }
 
