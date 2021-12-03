@@ -1,7 +1,5 @@
 const cityTextInputEl = document.getElementById("city-text-input");
 const submitBtnEl = document.getElementById("submit-button");
-let lat;
-let lon;
 // const displaySearchResultsEl = document.getElementById("display-search-results");
 // const currentDayForecastEl = document.getElementById('current-day-forecast');
 // const fiveDayForecastResultsEls = document.getElementsByClassName('five-day-forecast-results');
@@ -18,8 +16,7 @@ function getCurrentDayForcastAPIData(city) {
     .then(response => response.json())
     .then(data => {
         const { coord, name, main, wind } = data;
-        lat = coord.lat;
-        lon = coord.lon;
+        console.log('data 1', data);
         const today = moment().format('M/DD/YYYY');;
         const CDFPrimaryHeaderEl = document.querySelector('#current-day-forecast .city-name-data');
         const CDFTempDataEl = document.querySelector('#current-day-forecast .temp-data');
@@ -31,7 +28,7 @@ function getCurrentDayForcastAPIData(city) {
         CDFWindDataEl.textContent = `${wind.speed} MPH`;
         CDFhumidityDataEl.textContent = `${main.humidity}\u0025`;
         
-        return fetch(`${BASE_URL}/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${APIKEY}`);
+        return fetch(`${BASE_URL}/onecall?lat=${coord.lat}&lon=${coord.lon}&exclude=minutely,hourly,alerts&appid=${APIKEY}`);
     })
     .then(response => response.json())
     .then(data => {
@@ -48,7 +45,7 @@ function getCurrentDayForcastAPIData(city) {
 
 
         // get Five Day Forcast
-        // console.log('daily', daily);
+        console.log('daily 2', daily[0]);
         const fiveDayForcast = daily.splice(1,6);
         
         console.log('fiveDayForcast', fiveDayForcast);
