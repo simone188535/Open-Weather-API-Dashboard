@@ -123,8 +123,6 @@ function searchCity(event) {
       addNewSearchElement(city);
     } 
   }
-
-  cityTextInputEl.value = "";
 }
 
 function searchPrevHistory(event) {
