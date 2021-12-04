@@ -121,8 +121,10 @@ function searchCity(event) {
         JSON.stringify(citySearchHistory)
       );
       addNewSearchElement(city);
-    }
+    } 
   }
+
+  cityTextInputEl.value = "";
 }
 
 function searchPrevHistory(event) {
