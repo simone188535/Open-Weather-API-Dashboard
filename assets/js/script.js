@@ -2,7 +2,7 @@ const cityTextInputEl = document.getElementById("city-text-input");
 const submitBtnEl = document.getElementById("submit-button");
 const SearchHistoryEl = document.getElementById("search-history");
 const APIKEY = "14396699e98c2a6c2a2fd6780d2fbba0";
-const BASE_URL = "http://api.openweathermap.org/data/2.5";
+const BASE_URL = "https://api.openweathermap.org/data/2.5";
 const citySearchHistory = 
   localStorage.getItem("city-search-history") || [];
 
