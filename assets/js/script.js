@@ -4,7 +4,7 @@ const SearchHistoryEl = document.getElementById("search-history");
 const APIKEY = "14396699e98c2a6c2a2fd6780d2fbba0";
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 const citySearchHistory = 
-  localStorage.getItem("city-search-history") || [];
+JSON.parse(localStorage.getItem("city-search-history")) || [];
 
 function getCurrentDayForcastAPIData(city) {
   return fetch(`${BASE_URL}/weather?q=${city}&appid=${APIKEY}&units=imperial`)
@@ -100,8 +100,8 @@ function addNewSearchElement(city) {
 function displaySearchHistory() {
     
   if (citySearchHistory.length > 0) {
-    const parsedCitySearchHistory = JSON.parse(citySearchHistory);
-    parsedCitySearchHistory.forEach((city) =>addNewSearchElement(city)); 
+    // const parsedCitySearchHistory = JSON.parse(citySearchHistory);
+    citySearchHistory.forEach((city) =>addNewSearchElement(city)); 
   }
 }
 
