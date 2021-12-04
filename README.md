@@ -11,6 +11,6 @@ to dynamically display the data given by the API.
 
 ## Deployed Links
 
-* [The URL of the deployed application.](https://simone188535.github.io/Personal-Work-Day-Scheduler/)
+* [The URL of the deployed application.](https://simone188535.github.io/Open-Weather-API-Dashboard/)
 
 * [The URL of the GitHub repository.](https://github.com/simone188535/Open-Weather-API-Dashboard)
