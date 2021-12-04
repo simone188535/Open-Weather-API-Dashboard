@@ -29,6 +29,7 @@ section aside.search-city .hr {
 
 section main#display-search-results {
     /* display: none; */
+    margin-bottom: 2rem;
 }
 
 section main #current-day-forecast {
