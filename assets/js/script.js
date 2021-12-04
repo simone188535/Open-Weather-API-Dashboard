@@ -100,7 +100,6 @@ function addNewSearchElement(city) {
 function displaySearchHistory() {
     
   if (citySearchHistory.length > 0) {
-    // const parsedCitySearchHistory = JSON.parse(citySearchHistory);
     citySearchHistory.forEach((city) =>addNewSearchElement(city)); 
   }
 }
@@ -123,6 +122,7 @@ function searchCity(event) {
       addNewSearchElement(city);
     } 
   }
+  cityTextInputEl.value = '';
 }
 
 function searchPrevHistory(event) {
