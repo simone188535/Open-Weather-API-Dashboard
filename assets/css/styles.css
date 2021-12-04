@@ -51,7 +51,7 @@ section main .five-day-forecast-results .five-day-forecast {
     background-color: var(--blue);
 }
 
-ul.search-history li button.search-history-btn {
+ul#search-history li button.search-history-btn {
     background-color: var(--light-grey);
 }
 
