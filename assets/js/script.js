@@ -1,10 +1,5 @@
 const cityTextInputEl = document.getElementById("city-text-input");
 const submitBtnEl = document.getElementById("submit-button");
-// const displaySearchResultsEl = document.getElementById("display-search-results");
-// const currentDayForecastEl = document.getElementById('current-day-forecast');
-// const fiveDayForecastResultsEls = document.getElementsByClassName('five-day-forecast-results');
-// const fiveDayForecastEls = document.getElementsByClassName('five-day-forecast');
-
 const APIKEY = '14396699e98c2a6c2a2fd6780d2fbba0';
 const BASE_URL = 'http://api.openweathermap.org/data/2.5';
 const citySearchHistory = [];
@@ -16,8 +11,8 @@ function getCurrentDayForcastAPIData(city) {
     .then(response => response.json())
     .then(data => {
         const { coord, name, main, wind } = data;
-        console.log('data 1', data);
-        const today = moment().format('M/DD/YYYY');;
+
+        const today = moment().format('M/DD/YYYY');
         const CDFPrimaryHeaderEl = document.querySelector('#current-day-forecast .city-name-data');
         const CDFTempDataEl = document.querySelector('#current-day-forecast .temp-data');
         const CDFWindDataEl = document.querySelector('#current-day-forecast .wind-data');
@@ -37,7 +32,7 @@ function getCurrentDayForcastAPIData(city) {
 
         const fiveDayForecastResultsEls = document.getElementsByClassName('five-day-forecast-results');
         const fiveDayForecastContainer = document.getElementById('five-day-forecast-container');
-        const currentDayForecastEl = document.querySelector('#current-day-forecast');
+        const currentDayForecastEl = document.getElementById('current-day-forecast');
         const UvhumidityDataEl = document.querySelector('#current-day-forecast .uv-data');
 
         UvhumidityDataEl.textContent = `${current.uvi}`;
@@ -45,20 +40,23 @@ function getCurrentDayForcastAPIData(city) {
 
 
         // get Five Day Forcast
-        console.log('daily 2', daily[0]);
-        const fiveDayForcast = daily.splice(1,6);
+        const fiveDayForcast = daily.splice(1,5);
         
-        console.log('fiveDayForcast', fiveDayForcast);
-        fiveDayForcast.forEach(element => {
-            console.log('DTTT',moment.unix(element.dt).format("MM/DD/YYYY"));
+        // remove clear five dsy forcast
+        fiveDayForecastContainer.innerHTML = "";
+        // iteratively show five day forcast
+        fiveDayForcast.forEach(singleDayForcast => {
+
+            const { dt, temp, wind_speed, humidity } = singleDayForcast;
+            const FCDate = moment.unix(dt).format("MM/DD/YYYY");
 
             // append HTML block to this element fiveDayForecastResultsEls
             const sectionEl = document.createElement('section');
-            sectionEl.setAttribute('class', 'col-lg-2 mb-3 mb-lg-0 five-day-forecast');
-            sectionEl.innerHTML = `<h2 class="my-3 mb-4 secondary-header city-name-data"></h2>
-            <p class="mb-4">Temp: <span class="temp-data"></span></p>
-            <p class="mb-4">Wind: <span class="wind-data"></span></p>
-            <p class="mb-4">Humidity: <span class="humidity-data"></span></p>`;
+            sectionEl.setAttribute('class', 'col-lg-2 mb-3 mb-lg-0 ml-lg-1 text-center text-lg-left five-day-forecast');
+            sectionEl.innerHTML = `<h2 class="my-3 mb-4 tertiary-header city-name-data">${FCDate}</h2>
+            <p class="mb-4">Temp: <span class="temp-data">${temp.day}\u2109</span></p>
+            <p class="mb-4">Wind: <span class="wind-data">${wind_speed} MPH</span></p>
+            <p class="mb-4">Humidity: <span class="humidity-data">${humidity}\u0025</span></p>`;
             fiveDayForecastContainer.appendChild(sectionEl);
         });
 
@@ -78,7 +76,6 @@ function searchCity(event) {
 
     if (city) {
         getCurrentDayForcastAPIData(city);
-        // getFiveDayForcastAPIData(city);
     }
 }
 

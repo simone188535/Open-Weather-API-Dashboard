@@ -36,6 +36,9 @@ section main #current-day-forecast {
     display: none;
 }
 
+section main .five-day-forecast .tertiary-header {
+    font-size: 1.2rem;
+}
 section main .five-day-forecast-results {
     display: none;
 }
