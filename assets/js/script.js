@@ -1,5 +1,6 @@
 const cityTextInputEl = document.getElementById("city-text-input");
 const submitBtnEl = document.getElementById("submit-button");
+const SearchHistoryEl = document.getElementById("search-history");
 const APIKEY = "14396699e98c2a6c2a2fd6780d2fbba0";
 const BASE_URL = "http://api.openweathermap.org/data/2.5";
 const citySearchHistory = 
@@ -83,15 +84,15 @@ function getCurrentDayForcastAPIData(city) {
       }
     })
     .catch(function (error) {
-      alert("Unable to connect to GitHub");
+      alert("An error occurred, Please try again later.");
     });
 }
 
 
 function addNewSearchElement(city) {
-    const SearchHistoryEl = document.getElementById("search-history");
     const listItem = document.createElement('li');
-    listItem.innerHTML = `<button class="w-100 btn mb-3 text-dark search-history-btn">${city}</button>`;
+
+    listItem.innerHTML = `<button class="w-100 btn mb-3 text-dark search-history-btn" data-city-name="${city}">${city}</button>`;
 
     SearchHistoryEl.insertAdjacentElement('afterbegin', listItem);
 }
@@ -124,5 +125,16 @@ function searchCity(event) {
   }
 }
 
+function searchPrevHistory(event) {
+
+    if (event.target.matches("button")) {
+        
+        const cityVal = event.target.getAttribute('data-city-name');
+        getCurrentDayForcastAPIData(cityVal);
+    }
+
+}
+
 displaySearchHistory();
 submitBtnEl.addEventListener("click", searchCity);
+SearchHistoryEl.addEventListener("click", searchPrevHistory);
